@@ -7,23 +7,23 @@
 *::before {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  @apply text-2xl;
+  @apply text-4xl;
 }
 
 body {
-  @apply bg-rose-300 text-[#de4848];
+  @apply bg-[#f2f1ed] text-[#de4848];
 }
 
 .flip-card {
-  @apply inline-flex flex-col rounded-[2px] overflow-hidden relative;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  @apply inline-flex flex-col rounded-[2px] relative;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .top,
 .bottom,
 .flip-card .top-flip,
 .flip-card .bottom-flip {
-  @apply h-4 leading-6 p-1 overflow-hidden;
+  @apply h-[0.75em] leading-[1] p-[0.25em] overflow-hidden;
 }
 
 .top,
@@ -33,12 +33,11 @@ body {
 
 .bottom,
 .flip-card .bottom-flip {
-  @apply bg-white flex items-end justify-end rounded-b-[2px];
+  @apply bg-white flex items-end rounded-b-[2px];
 }
 
 .flip-card .top-flip {
   @apply h-1/2 absolute w-full origin-bottom;
-  content: attr(data-current-number);
   animation: flip-top 250ms ease-in;
 }
 
@@ -49,9 +48,7 @@ body {
 }
 
 .flip-card .bottom-flip {
-  @apply h-1/2 absolute w-full origin-top;
-  content: attr(data-next-number);
-  bottom: 0;
+  @apply absolute bottom-0 w-full origin-top;
   animation: flip-bottom 250ms ease-out 250ms;
   transform: rotateX(90deg);
 }
@@ -60,4 +57,20 @@ body {
   100% {
     transform: rotateX(0deg);
   }
+}
+
+.container {
+  @apply flex gap-[0.5em] content-center;
+}
+
+.container-segment {
+  @apply flex flex-col gap-[0.1em] items-center;
+}
+
+.segment {
+  @apply flex gap-[0.1em];
+}
+
+.segment-title {
+  @apply text-[1rem];
 }
