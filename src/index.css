@@ -15,7 +15,7 @@ body {
 }
 
 .flip-card {
-  @apply inline-flex flex-col rounded-[2px] relative;
+  @apply inline-flex flex-col rounded-[.1em] relative;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -28,28 +28,29 @@ body {
 
 .top,
 .flip-card .top-flip {
-  @apply bg-[#f7f7f7] rounded-t-[2px] border-b-[.5px] border-b-gray-300;
+  @apply bg-[#f7f7f7] rounded-t-[.1em] border-b-[.5px] border-b-gray-300;
 }
 
 .bottom,
 .flip-card .bottom-flip {
-  @apply bg-white flex items-end rounded-b-[2px];
+  @apply bg-white flex items-end rounded-b-[.1em];
 }
 
 .flip-card .top-flip {
   @apply h-1/2 absolute w-full origin-bottom;
-  animation: flip-top 250ms ease-in;
+  animation: flip-top 250ms ease-in-out;
 }
 
 @keyframes flip-top {
   100% {
     transform: rotateX(90deg);
+    @apply bg-[#d3d3d3]  border-2 border-gray-300;
   }
 }
 
 .flip-card .bottom-flip {
   @apply absolute bottom-0 w-full origin-top;
-  animation: flip-bottom 250ms ease-out 250ms;
+  animation: flip-bottom 250ms ease-in-out 250ms;
   transform: rotateX(90deg);
 }
 
@@ -57,10 +58,6 @@ body {
   100% {
     transform: rotateX(0deg);
   }
-}
-
-.container {
-  @apply flex gap-[0.5em] content-center;
 }
 
 .container-segment {
