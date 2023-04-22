@@ -7,7 +7,7 @@ function App() {
   // const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
   // const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
 
-  const toDate = "June 13, 2023 00:00:00";
+  const toDate = "April 23, 2023 00:00:00";
   const countToDate = new Date().setHours(new Date().getHours() + 24)
   
   return (
