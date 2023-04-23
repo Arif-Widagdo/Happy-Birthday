@@ -1,6 +1,7 @@
 import React from "react";
 import { useCountdown } from "../hooks/useCountdown";
 import DateTimeDisplay from "./DateTimeDisplay";
+import { useTheme } from "../providers/ThemeContext";
 
 const ExpiredNotice = () => {
   return (
@@ -12,9 +13,15 @@ const ExpiredNotice = () => {
 };
 
 const ShowCounter = ({ targetDate, days, hours, minutes, seconds }) => {
+  const darkTheme = useTheme();
+  const themeStyles = {
+    backgroundColor: darkTheme ? "#333" : "#CCC",
+    color: darkTheme ? "#CCC" : "#333",
+  };
+
   console.log(days + hours + minutes + seconds);
   return (
-    <div className="showCounter">
+    <div className="showCounter" style={themeStyles}>
       <div
         className={`text-sm font-bold ${
           days <= 0 && hours <= 3 ? "animate-bounce" : null

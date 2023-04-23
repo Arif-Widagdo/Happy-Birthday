@@ -6,22 +6,11 @@
 *::after,
 *::before {
   font-family: Arial, Helvetica, sans-serif;
-  @apply text-2xl box-border;
-}
-
-body {
-  @apply dark:bg-black bg-white;
-}
-
-.navbar {
-  @apply py-2 px-2;
-}
-.navbar-section {
-  @apply flex justify-between items-center;
+  @apply text-2xl box-border text-white;
 }
 
 .showCounter {
-  @apply w-full h-screen flex flex-col items-center justify-center;
+  @apply w-full h-screen flex flex-col items-center justify-center bg-black;
 }
 
 .countdown {
