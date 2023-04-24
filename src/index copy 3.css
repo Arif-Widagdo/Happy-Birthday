@@ -9,7 +9,7 @@
   @apply box-border dark:text-white text-black;
 }
 body {
-  @apply bg-white  dark:bg-black;
+  @apply bg-gradient-to-b from-gray-200 to-[#2d71FE] dark:from-gray-900 dark:to-[#011b4e];
 }
 
 .navbar {

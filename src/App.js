@@ -17,10 +17,8 @@ export default  function App() {
   
   return (
     <ThemeProvider>
-      {/* <div className="App"> */}
-          <Navbar />
-          <CountdownTimer targetDate={toDate} />
-      {/* </div> */}
+        <Navbar />
+        <CountdownTimer targetDate={toDate} />
     </ThemeProvider>
   );
 }

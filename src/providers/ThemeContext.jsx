@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const ThemeContext = React.createContext();
 const ThemeUpdateContext = React.createContext();
@@ -12,14 +12,34 @@ export function useThemeUpdate() {
 }
 
 export function ThemeProvider({ children }) {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme());
 
+  useEffect(() => {
+    // Simpan tema saat ini ke dalam localStorage ketika nilai berubah
+    localStorage.setItem("theme", theme);
+    // Tambahkan atau hapus kelas CSS pada tag HTML sesuai dengan tema yang dipilih
+    document.documentElement.classList.remove("dark", "light");
+    document.documentElement.classList.add(theme);
+  }, [theme]);
+
+  // Fungsi untuk membaca tema awal dari prefers-color-scheme atau localStorage
+  function getInitialTheme() {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      return storedTheme;
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
+
+  // Fungsi untuk mengganti tema
   function toggleTheme() {
-    setDarkTheme((prevDarkTheme) => !prevDarkTheme);
+    setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
   }
 
   return (
-    <ThemeContext.Provider value={darkTheme}>
+    <ThemeContext.Provider value={theme}>
       <ThemeUpdateContext.Provider value={toggleTheme}>
         {children}
       </ThemeUpdateContext.Provider>
