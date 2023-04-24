@@ -6,17 +6,22 @@
 *::after,
 *::before {
   font-family: Arial, Helvetica, sans-serif;
-  @apply box-border dark:text-white text-black;
+  @apply box-border;
 }
 body {
-  @apply bg-white  dark:bg-black;
+  @apply bg-gray-200/60  dark:bg-black;
 }
 
 .navbar {
-  @apply py-4 px-2 fixed w-full top-0 right-0 left-0 shadow dark:shadow-[#6811D1]/50;
+  @apply py-4 px-2 fixed w-full top-0 right-0 left-0 shadow dark:shadow-[#6811D1]/25;
 }
+
 .navbar-section {
   @apply flex justify-between items-center;
+}
+
+.btn-sidebar {
+  @apply h-8 w-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2;
 }
 
 .showCounter {
@@ -24,11 +29,14 @@ body {
 }
 
 .countdown {
+  @apply flex flex-col gap-y-8 md:flex-row md:gap-y-0 md:items-end gap-x-2;
+}
+.countdown-grid {
   @apply flex items-end mx-auto gap-x-2;
 }
 
 .title {
-  @apply text-[10px];
+  @apply text-xl;
 }
 
 .time-section {
@@ -36,11 +44,11 @@ body {
 }
 
 .time-group {
-  @apply flex gap-x-[3px];
+  @apply flex gap-x-[3px] xl:gap-x-1;
 }
 
 .time-segment {
-  @apply block text-2xl font-bold w-[28px];
+  @apply block text-8xl font-bold w-20 lg:w-24 lg:text-9xl;
 }
 
 .segment-display {
@@ -49,33 +57,33 @@ body {
 
 .segment-display__top,
 .segment-display__bottom {
-  @apply overflow-hidden text-center w-full h-1/2 relative border-gray-300;
+  @apply overflow-hidden text-center w-full h-1/2 relative bg-gray-200 text-black dark:bg-[#101010] dark:text-white/75;
 }
 
 .segment-display__top {
-  @apply leading-[1] text-black bg-white border border-b-0;
+  @apply leading-[1]  rounded-t-lg;
 }
 
 .segment-display__bottom {
-  @apply leading-[0] text-black/90 bg-[#ebebeb] border border-t-0;
+  @apply leading-[0] rounded-b-lg;
 }
 
 .segment-overlay {
-  @apply absolute top-0 h-full w-[28px];
+  @apply absolute top-0 h-full w-20 lg:w-24;
   perspective: 400px;
 }
 
 .segment-overlay__top,
 .segment-overlay__bottom {
-  @apply absolute overflow-hidden text-center w-full h-1/2 border-gray-300;
+  @apply absolute overflow-hidden text-center w-full h-1/2 bg-gray-200 text-black dark:bg-[#101010] dark:text-white/75;
 }
 
 .segment-overlay__top {
-  @apply top-0 leading-[1] text-black bg-white origin-bottom border border-b-0;
+  @apply top-0 leading-[1] origin-bottom rounded-t-lg;
 }
 
 .segment-overlay__bottom {
-  @apply bottom-0 leading-[0] text-black/90 bg-[#ebebeb] border border-t-[.5px] border-t-black origin-top;
+  @apply bottom-0 leading-[0] origin-top rounded-b-lg border-t-[1.5px] border-t-gray-200/60 dark:border-t-[#101010];
 }
 
 .segment-overlay.flip .segment-overlay__top {
