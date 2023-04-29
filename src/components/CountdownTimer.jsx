@@ -13,8 +13,6 @@ const ExpiredNotice = () => {
 };
 
 const ShowCounter = ({ targetDate, days, hours, minutes, seconds }) => {
-  const darkTheme = useTheme();
-
   return (
     <div className="showCounter">
       <div className="countdown">

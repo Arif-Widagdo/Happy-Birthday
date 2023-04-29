@@ -3,16 +3,18 @@ import {
   Bars3BottomLeftIcon,
   MoonIcon,
   SunIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/solid";
 
 import { useTheme, useThemeUpdate } from "../providers/ThemeContext";
 import { Dialog, Switch, Transition } from "@headlessui/react";
+import arifWidagdo from "../assets/img/arifWidagdoCrop.jpg";
 
 export default function Navbar() {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  let [sidebar, setSidebar] = useState(false);
+  let [sidebar, setSidebar] = useState(true);
 
   function closeModal() {
     setSidebar(false);
@@ -26,22 +28,22 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-section">
-          <button type="button" onClick={openModal} className="btn-sidebar">
-            <Bars3BottomLeftIcon />
+          <button type="button" onClick={openModal} className="btn-sidebar ">
+            <Bars3BottomLeftIcon className="w-6 h-6 text-black transform dark:text-white" />
           </button>
           <Switch
             checked={darkTheme === "dark"}
             onChange={toggleTheme}
-            className={`bg-gray-200 dark:bg-[#6811D1] relative inline-flex h-8 w-16 items-center rounded-full`}
+            className={`bg-slate-200 dark:bg-slate-800 relative inline-flex h-8 w-16 items-center rounded-full`}
           >
             <span className="sr-only">Themes</span>
             <span
               className={`${
                 darkTheme === "dark" ? "translate-x-8" : "translate-x-1"
-              } inline-block h-6 w-6 transform rounded-full bg-white dark:bg-[#b070ff] transition`}
+              } inline-block h-6 w-6 transform rounded-full bg-white dark:bg-slate-600 transition`}
             >
               {darkTheme === "dark" ? (
-                <MoonIcon className="text-black transform" />
+                <MoonIcon className="text-black transform dark:text-white" />
               ) : (
                 <SunIcon className="text-black transform" />
               )}
@@ -75,7 +77,7 @@ function Sidebar({ sidebar, closeModal, openModal }) {
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-start justify-start text-center">
+          <div className="flex items-start justify-start min-h-full text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -85,36 +87,51 @@ function Sidebar({ sidebar, closeModal, openModal }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 -translate-x-full"
             >
-              <Dialog.Panel className="w-full h-screen max-w-lg transform overflow-hidden  bg-white dark:bg-black p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full h-screen p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl md:max-w-lg bg-slate-50 dark:bg-black">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900 flex justify-end "
+                  className="flex items-center justify-end text-lg font-medium leading-6 text-slate-900 "
                 >
-                  <div>Halo Ncyem</div>
                   <button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent
-                    bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="btn-sidebar"
                     onClick={closeModal}
                   >
-                    X
+                    <XMarkIcon className="w-6 h-6 text-black transform dark:text-white" />
                   </button>
                 </Dialog.Title>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Your payment has been successfully submitted. We’ve sent you
-                    an email with all of the details of your order.
-                  </p>
-                </div>
-
                 <div className="mt-4">
-                  <button
-                    type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                    onClick={closeModal}
-                  >
-                    Got it, thanks!
-                  </button>
+                  <figure className="p-8 overflow-hidden md:flex bg-slate-100 rounded-xl md:p-0 dark:bg-slate-800">
+                    <img
+                      className="object-cover w-56 h-56 mx-auto rounded-full md:w-48 md:h-auto md:rounded-none"
+                      src={arifWidagdo}
+                      alt=""
+                    />
+                    <div className="pt-6 space-y-4 text-center md:p-8 md:text-left">
+                      <blockquote>
+                        <p className="text-lg font-medium">
+                          “Tailwind CSS is the only framework that I've seen
+                          scale on large teams. It’s easy to customize, adapts
+                          to any design, and the build size is tiny.”
+                        </p>
+                      </blockquote>
+                      <figcaption className="font-medium">
+                        <div className="text-sky-500 dark:text-sky-400">
+                          Sarah Dayan
+                        </div>
+                        <div className="text-slate-700 dark:text-slate-500">
+                          Staff Engineer, Algolia
+                        </div>
+                      </figcaption>
+                    </div>
+                  </figure>
+                  {/* <div className="flex items-center justify-center w-full overflow-hidden border-2 shadow bg-slate-200 h-72 rounded-xl">
+                    <img
+                      src={arifWidagdo}
+                      alt=""
+                      className="object-cover w-56 h-auto"
+                    />
+                  </div> */}
                 </div>
               </Dialog.Panel>
             </Transition.Child>

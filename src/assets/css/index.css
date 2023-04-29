@@ -9,7 +9,7 @@
   @apply box-border;
 }
 body {
-  @apply bg-gray-200/60  dark:bg-black;
+  @apply bg-slate-200/60  dark:bg-black;
 }
 
 .navbar {
@@ -21,7 +21,7 @@ body {
 }
 
 .btn-sidebar {
-  @apply h-8 w-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2;
+  @apply h-8 w-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2 bg-slate-200 dark:bg-slate-800 relative inline-flex items-center rounded-md justify-center;
 }
 
 .showCounter {
@@ -57,7 +57,7 @@ body {
 
 .segment-display__top,
 .segment-display__bottom {
-  @apply overflow-hidden text-center w-full h-1/2 relative bg-gray-200 text-black dark:bg-[#101010] dark:text-white/75;
+  @apply overflow-hidden text-center w-full h-1/2 relative bg-slate-200 text-black dark:bg-[#101010] dark:text-white/75;
 }
 
 .segment-display__top {
@@ -75,7 +75,7 @@ body {
 
 .segment-overlay__top,
 .segment-overlay__bottom {
-  @apply absolute overflow-hidden text-center w-full h-1/2 bg-gray-200 text-black dark:bg-[#101010] dark:text-white/75;
+  @apply absolute overflow-hidden text-center w-full h-1/2 bg-slate-200 text-black dark:bg-[#101010] dark:text-white/75;
 }
 
 .segment-overlay__top {
@@ -83,7 +83,7 @@ body {
 }
 
 .segment-overlay__bottom {
-  @apply bottom-0 leading-[0] origin-top rounded-b-lg border-t-[1.5px] border-t-gray-200/60 dark:border-t-[#101010];
+  @apply bottom-0 leading-[0] origin-top rounded-b-lg border-t-[1.5px] border-t-slate-200/60 dark:border-t-[#101010];
 }
 
 .segment-overlay.flip .segment-overlay__top {
