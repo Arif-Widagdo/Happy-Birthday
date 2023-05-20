@@ -21,7 +21,7 @@ const ShowCounter = ({ targetDate, days, hours, minutes, seconds }) => {
             id={"days"}
             dateTime={{ days, hours, minutes, seconds }}
           />
-          <div className="text-black dark:text-white text-8xl mb-1 lg:text-9xl">
+          <div className="mb-1 text-black dark:text-white text-8xl lg:text-9xl">
             :
           </div>
           <DateTimeDisplay
@@ -30,7 +30,7 @@ const ShowCounter = ({ targetDate, days, hours, minutes, seconds }) => {
             dateTime={{ days, hours, minutes, seconds }}
           />
         </div>
-        <div className="text-black dark:text-white text-8xl mb-1 lg:text-9xl hidden md:block">
+        <div className="hidden mb-1 text-black dark:text-white text-8xl lg:text-9xl md:block">
           :
         </div>
         <div className="countdown-grid">
@@ -38,7 +38,7 @@ const ShowCounter = ({ targetDate, days, hours, minutes, seconds }) => {
             id={"minutes"}
             dateTime={{ days, hours, minutes, seconds }}
           />
-          <div className="text-black dark:text-white text-8xl mb-1 lg:text-9xl">
+          <div className="mb-1 text-black dark:text-white text-8xl lg:text-9xl">
             :
           </div>
           <DateTimeDisplay

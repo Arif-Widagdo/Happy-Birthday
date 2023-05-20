@@ -8,14 +8,13 @@ import {
 
 import { useTheme, useThemeUpdate } from "../providers/ThemeContext";
 import { Dialog, Switch, Transition } from "@headlessui/react";
-import arifWidagdo from "../assets/img/arifWidagdoCrop.jpg";
-import Plants from "./Plants";
+import arifWidagdo from "../assets/img/arifWidagdo.jpg";
 
 export default function Navbar() {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  let [sidebar, setSidebar] = useState(true);
+  let [sidebar, setSidebar] = useState(false);
 
   function closeModal() {
     setSidebar(false);
@@ -52,16 +51,12 @@ export default function Navbar() {
           </Switch>
         </div>
       </nav>
-      <Sidebar
-        sidebar={sidebar}
-        closeModal={closeModal}
-        openModal={openModal}
-      />
+      <Sidebar sidebar={sidebar} closeModal={closeModal} />
     </>
   );
 }
 
-function Sidebar({ sidebar, closeModal, openModal }) {
+function Sidebar({ sidebar, closeModal }) {
   return (
     <Transition appear show={sidebar} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -132,7 +127,7 @@ function Sidebar({ sidebar, closeModal, openModal }) {
                       </figcaption>
                     </div>
                   </figure>
-                  <Plants />
+                  {/* <Plants /> */}
                   {/* <div className="flex items-center justify-center w-full overflow-hidden border-2 shadow bg-slate-200 h-72 rounded-xl">
                     <img
                       src={arifWidagdo}
