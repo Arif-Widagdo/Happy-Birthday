@@ -9,6 +9,7 @@ import {
 import { useTheme, useThemeUpdate } from "../providers/ThemeContext";
 import { Dialog, Switch, Transition } from "@headlessui/react";
 import arifWidagdo from "../assets/img/arifWidagdoCrop.jpg";
+import Plants from "./Plants";
 
 export default function Navbar() {
   const darkTheme = useTheme();
@@ -87,7 +88,7 @@ function Sidebar({ sidebar, closeModal, openModal }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 -translate-x-full"
             >
-              <Dialog.Panel className="w-full h-screen p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl md:max-w-lg bg-slate-50 dark:bg-black">
+              <Dialog.Panel className="w-full h-screen p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl md:max-w-xl bg-slate-50 dark:bg-black">
                 <Dialog.Title
                   as="h3"
                   className="flex items-center justify-end text-lg font-medium leading-6 text-slate-900 "
@@ -109,22 +110,29 @@ function Sidebar({ sidebar, closeModal, openModal }) {
                     />
                     <div className="pt-6 space-y-4 text-center md:p-8 md:text-left">
                       <blockquote>
-                        <p className="text-lg font-medium">
-                          “Tailwind CSS is the only framework that I've seen
-                          scale on large teams. It’s easy to customize, adapts
-                          to any design, and the build size is tiny.”
+                        <p className="text-lg font-medium dark:text-white">
+                          “Kata-kata hampir tidak dapat menggambarkan cinta,
+                          kegembiraan dan kebahagiaan yang kamu bawa ke dalam
+                          hari ini. Selamat ulang tahun, semoga kamu mendapatkan
+                          semua itu dan lebih banyak lagi di hari istimewamu!”
                         </p>
                       </blockquote>
                       <figcaption className="font-medium">
                         <div className="text-sky-500 dark:text-sky-400">
-                          Sarah Dayan
+                          {/* <a
+                            href="https://www.instagram.com/arif_widagdo/"
+                            target="_blank"
+                          > */}
+                          Arif Widagdo
+                          {/* </a> */}
                         </div>
                         <div className="text-slate-700 dark:text-slate-500">
-                          Staff Engineer, Algolia
+                          Backend Developer, PanoramaID
                         </div>
                       </figcaption>
                     </div>
                   </figure>
+                  <Plants />
                   {/* <div className="flex items-center justify-center w-full overflow-hidden border-2 shadow bg-slate-200 h-72 rounded-xl">
                     <img
                       src={arifWidagdo}
