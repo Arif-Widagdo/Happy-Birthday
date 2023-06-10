@@ -14,7 +14,7 @@ export default function Navbar() {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  let [sidebar, setSidebar] = useState(false);
+  let [sidebar, setSidebar] = useState(true);
 
   function closeModal() {
     setSidebar(false);
@@ -83,7 +83,7 @@ function Sidebar({ sidebar, closeModal }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 -translate-x-full"
             >
-              <Dialog.Panel className="w-full h-screen p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl md:max-w-xl bg-slate-50 dark:bg-black">
+              <Dialog.Panel className="w-full h-screen p-6 overflow-hidden text-left align-middle transition-all transform shadow-xl md:max-w-xl bg-gradient-to-r from-slate-200 to-black dark:bg-black">
                 <Dialog.Title
                   as="h3"
                   className="flex items-center justify-end text-lg font-medium leading-6 text-slate-900 "

@@ -2,6 +2,7 @@ import React from "react";
 import { useCountdown } from "../hooks/useCountdown";
 import DateTimeDisplay from "./DateTimeDisplay";
 import { useTheme } from "../providers/ThemeContext";
+import Greetings from "./greetings/Greetings";
 
 const ExpiredNotice = () => {
   return (
@@ -55,7 +56,7 @@ const CountdownTimer = ({ targetDate }) => {
   const [complete, days, hours, minutes, seconds] = useCountdown(targetDate);
 
   if (days + hours + minutes + seconds <= 0) {
-    return <ExpiredNotice />;
+    return <Greetings />;
   } else {
     return (
       <ShowCounter
