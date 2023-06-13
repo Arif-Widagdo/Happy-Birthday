@@ -14,7 +14,7 @@ export default function Navbar() {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  let [sidebar, setSidebar] = useState(true);
+  let [sidebar, setSidebar] = useState(false);
 
   function closeModal() {
     setSidebar(false);

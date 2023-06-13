@@ -1,0 +1,216 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.song {
+  @apply invisible;
+}
+
+.container-greeting {
+  @apply h-screen mx-auto overflow-hidden relative text-center invisible w-screen;
+}
+
+.container-greeting > div {
+  @apply absolute left-0 right-0 top-20vh;
+}
+
+.one {
+  @apply text-4xl;
+}
+
+.two {
+  @apply text-sm font-light;
+}
+
+.three {
+  @apply text-3xl;
+}
+
+.four .text-box {
+  @apply border-3 border-gray-400 rounded-lg mx-auto p-10 relative w-600px;
+}
+
+.text-box p {
+  @apply m-0 text-left;
+}
+
+.text-box span {
+  @apply invisible;
+}
+
+.text-box .fake-btn {
+  @apply absolute bg-blue-500 rounded-md bottom-[-50px] right-5 text-white py-2 px-4;
+}
+
+.five p {
+  @apply text-2xl left-0 absolute right-0;
+}
+
+.idea-3 strong {
+  @apply border-2 rounded-md inline-block p-1;
+}
+
+.five .idea-5 {
+  @apply text-4xl;
+}
+
+.idea-5 span,
+.idea-6 span,
+.wish-hbd span {
+  @apply inline-block;
+}
+
+.idea-6 span {
+  @apply text-15xl;
+}
+
+.six {
+  @apply relative top-10vh;
+}
+
+.six img {
+  @apply inline-block h-350px max-w-full;
+}
+
+.six .hat {
+  @apply absolute left-[41.5%] top-[-35%] w-80px;
+}
+
+.baloons img {
+  @apply inline-block absolute;
+}
+
+.baloons img:nth-child(even) {
+  @apply left-[-10%];
+}
+
+.baloons img:nth-child(odd) {
+  @apply right-[-10%];
+}
+
+.baloons img:nth-child(3n + 0) {
+  @apply left-[30%];
+}
+
+.seven,
+.eight {
+  @apply fixed h-screen top-0 w-screen;
+}
+
+.eight svg {
+  @apply absolute left-0 top-0 invisible w-25px;
+}
+
+.eight svg:nth-child(1) {
+  @apply fill-#bd6ecf left-5vw top-7vh;
+}
+
+.eight svg:nth-child(2) {
+  @apply fill-#7dd175 left-35vw top-23vh;
+}
+
+.eight svg:nth-child(3) {
+  @apply fill-#349d8b left-23vw top-33vh;
+}
+
+.eight svg:nth-child(4) {
+  @apply fill-#347a9d left-57vw top-43vh;
+}
+
+.eight svg:nth-child(5) {
+  @apply fill-#c66053 left-7vw top-68vh;
+}
+
+.eight svg:nth-child(6) {
+  @apply fill-#bfaa40 left-77vw top-42vh;
+}
+
+.eight svg:nth-child(7) {
+  @apply fill-#e3bae8 left-83vw top-68vh;
+}
+
+.eight svg:nth-child(8) {
+  @apply fill-#8762cb left-37vw top-86vh;
+}
+
+.eight svg:nth-child(9) {
+  @apply fill-#9a90da left-87vw top-94vh;
+}
+
+.wish-hbd {
+  @apply text-3xl;
+}
+
+.wish h5 {
+  @apply text-2xl font-light mt-10;
+}
+
+.nine p {
+  @apply text-2xl font-light;
+}
+
+#replay {
+  @apply cursor-pointer z-3;
+}
+
+@media screen and (max-height: 1000px) {
+  .six .hat {
+    @apply left-40%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .six .hat {
+    @apply left-37%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .six .hat {
+    @apply left-32%;
+  }
+}
+
+@media screen and (max-height: 850px) and (max-width: 450px) {
+  .six .hat {
+    @apply left-32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container-greeting {
+    @apply w-90%;
+  }
+
+  .four .text-box {
+    @apply w-90%;
+  }
+
+  .text-box .fake-btn {
+    @apply bottom-[-38px] right-5;
+  }
+
+  .idea-5 span {
+    @apply block;
+  }
+
+  .idea-6 span {
+    @apply text-10xl;
+  }
+
+  .six .hat {
+    @apply w-50px;
+  }
+
+  .wish-hbd {
+    @apply text-2xl;
+  }
+
+  .wish h5 {
+    @apply text-1.4rem;
+  }
+
+  .nine p {
+    @apply text-1.5rem font-light;
+  }
+}
