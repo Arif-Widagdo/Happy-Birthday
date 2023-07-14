@@ -98,23 +98,20 @@ body {
 
 .six {
   position: relative;
-  top: 10vh;
   z-index: 1;
 }
 
 .six img {
   display: inline-block;
-  height: 350px;
+  height: 500px;
   max-width: 100%;
   /* height: auto; */
 }
 
 .six .hat {
-  left: 41.5%;
+  left: 50%;
   position: absolute;
-  /* transform: scale(0.1); */
-  top: -35%;
-  width: 80px;
+  top: -45%;
 }
 
 .baloons img {
@@ -230,7 +227,7 @@ body {
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
-    left: 40%;
+    left: 48%;
   }
 }
 

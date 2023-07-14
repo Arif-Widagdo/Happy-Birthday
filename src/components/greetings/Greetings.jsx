@@ -56,10 +56,15 @@ function Greetings() {
         <div className="four">
           <div className="text-box">
             <p className="hbd-chatbox">
-              Happy birthday to youu!! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Consequuntur quisquam amet ipsam vitae,
-              voluptatum architecto aliquid id quo error tempora quos aperiam
-              magni necessitatibus quas ut, possimus nesciunt nam ad.
+              Selamat ulang tahun yang ke-27 kepada wanita cantik ini! Hari ini
+              adalah momen yang istimewa untuk merayakan pencapaianmu dan
+              kecantikanmu yang tak terbantahkan. Semoga hari ini penuh dengan
+              kebahagiaan dan keceriaan yang melimpah. Semoga usiamu yang baru
+              ini membawa berbagai kesuksesan, kebahagiaan, dan kesenangan yang
+              tak terhingga. Teruslah bersinar seperti bintang yang bercahaya,
+              dan teruslah menaklukkan dunia dengan kecantikanmu yang luar
+              biasa. Selamat ulang tahun yang tak terlupakan, semoga segala
+              impianmu menjadi nyata!
             </p>
             <p className="fake-btn">Send</p>
           </div>
@@ -86,7 +91,7 @@ function Greetings() {
 
         <div className="six">
           <img
-            src={require("../../assets/img/irene.jpg")}
+            src={require("../../assets/img/nciem.jpg")}
             alt="profile"
             className="profile-picture"
             id="imagePath"
