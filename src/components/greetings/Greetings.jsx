@@ -40,7 +40,7 @@ function Greetings() {
         <div className="one">
           <h1 className="one">
             Hi
-            <span id="name"> Nciem</span>
+            <span id="name"> Rika</span>
           </h1>
           <p className="two" id="greetingText">
             I really like your name btw!
@@ -54,7 +54,7 @@ function Greetings() {
         <div className="four">
           <div className="text-box">
             <p className="hbd-chatbox">
-              Selamat ulang tahun yang ke-27 kepada wanita cantik ini! Hari ini
+              Selamat ulang tahun yang ke-22 kepada wanita cantik ini! Hari ini
               adalah momen yang istimewa untuk merayakan pencapaianmu dan
               kecantikanmu yang tak terbantahkan. Semoga hari ini penuh dengan
               kebahagiaan dan keceriaan yang melimpah. Semoga usiamu yang baru
@@ -89,7 +89,7 @@ function Greetings() {
 
         <div className="six">
           <img
-            src={require("../../assets/img/nciem.jpg")}
+            src={require("../../assets/img/rika.jpg")}
             alt="profile"
             className="profile-picture"
             id="imagePath"

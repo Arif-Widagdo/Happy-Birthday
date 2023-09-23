@@ -1,5 +1,5 @@
 {
-  "name": "happy-birthday-nciem",
+  "name": "happy-birthday-rika",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "host": "react-scripts start --host 110.110.5.247",
     "shared": "HOST=192.168.1.8 PORT=3000 npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
