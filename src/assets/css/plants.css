@@ -47,6 +47,48 @@
     ),
     linear-gradient(90deg, #00fffa, #f0f0f0);
 }
+
+.day {
+  position: fixed;
+  inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(0.15vmin);
+
+  background-image: linear-gradient(
+    180deg,
+    #eaf6ff 0%,
+    #f5fbff 40%,
+    #ffffff 100%
+  );
+}
+
+.day::before {
+  content: "";
+  position: absolute;
+  top: -10vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30vmin;
+  height: 30vmin;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    #fff9c4 0%,
+    #ffe082 35%,
+    rgba(255, 224, 130, 0.6) 55%,
+    rgba(255, 224, 130, 0.25) 70%,
+    transparent 75%
+  );
+
+  filter: blur(1.2vmin);
+  opacity: 0.9;
+}
+
 .flowers {
   position: absolute;
   bottom: 0;
@@ -87,7 +129,7 @@
   animation: blooming-leaf-left var(--fl-speed) 2s backwards;
 }
 .flower--2 {
-  left: 50%;
+  left: 0%;
   transform: rotate(20deg);
   animation: moving-flower-2 4s linear infinite;
 }

@@ -1,24 +1,33 @@
-import React from "react";
-import CountdownTimer from "./components/CountdownTimer";
+import { CountdownDisplay } from "./components/CountdownTimer";
 import { ThemeProvider } from "./providers/ThemeContext";
-import Navbar from "./components/Nav";
+import Navbar from "./components/Navbar";
+import { useCountdown } from "./hooks/useCountdown";
+import Greetings from "./components/Greetings";
+import Plants from "./components/Plants";
 
 export default function App() {
-  // const NOW_IN_MS = new Date().getTime();
-  // const timeBetween = new Date("June 16, 2023 04:00:00").getTime() - NOW_IN_MS;
-  // const toDate = NOW_IN_MS + timeBetween;
-  // const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
-  // const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+  const toDate = "January 26, 2026 00:00:00";
 
-  // const toDate = "Juni 11, 2023 00:00:00";
-  const toDate = "September 24, 2023 00:00:00";
-  const countToDate = new Date().setHours(new Date().getHours() + 24);
+  const [complete, days, hours, minutes, seconds] = useCountdown(toDate);
 
   return (
     <ThemeProvider>
       <Navbar />
-      <CountdownTimer targetDate={toDate} />
+      <main className="h-screen w-screen overflow-hidden flex items-center justify-center">
+        {complete ? (
+          <Greetings />
+        ) : (
+          <>
+            <Plants />
+            <CountdownDisplay
+              days={days}
+              hours={hours}
+              minutes={minutes}
+              seconds={seconds}
+            />
+          </>
+        )}
+      </main>
     </ThemeProvider>
-    // <CountdownTimer targetDate={toDate} />
   );
 }

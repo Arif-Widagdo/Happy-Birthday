@@ -8,20 +8,9 @@
   font-family: Arial, Helvetica, sans-serif;
   @apply box-border;
 }
+
 body {
   @apply bg-slate-200/60  dark:bg-black;
-}
-
-.navbar {
-  @apply py-4 px-2 fixed w-full top-0 right-0 left-0 shadow dark:shadow-[#6811D1]/25;
-}
-
-.navbar-section {
-  @apply flex justify-between items-center;
-}
-
-.btn-sidebar {
-  @apply h-8 w-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2 bg-slate-200 dark:bg-slate-800 relative inline-flex items-center rounded-md justify-center;
 }
 
 .showCounter {
@@ -44,15 +33,15 @@ body {
 }
 
 .time-group {
-  @apply flex gap-x-[3px] xl:gap-x-1;
+  @apply flex gap-x-2;
 }
 
 .time-segment {
-  @apply block text-8xl font-bold w-20 lg:w-24 lg:text-9xl;
+  @apply block text-8xl font-bold w-20 lg:w-32 md:w-24 md:text-9xl lg:text-[10rem];
 }
 
 .segment-display {
-  @apply relative h-full;
+  @apply relative h-full rounded-lg shadow-md;
 }
 
 .segment-display__top,
@@ -69,7 +58,7 @@ body {
 }
 
 .segment-overlay {
-  @apply absolute top-0 h-full w-20 lg:w-24;
+  @apply absolute top-0 h-full w-20 lg:w-32 md:w-24;
   perspective: 400px;
 }
 

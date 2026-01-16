@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const DateTimeDisplay = ({ id, title, dateTime }) => {
   useEffect(() => {
@@ -87,7 +87,7 @@ const DateTimeDisplay = ({ id, title, dateTime }) => {
   return (
     <div className="time-section" id={id}>
       <p className="title capitalize font-bold mb-2 text-black/90 dark:text-white/75">
-        {id}
+        {title}
       </p>
       <div className="time-group">
         <div className="time-segment">

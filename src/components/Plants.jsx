@@ -1,11 +1,12 @@
-import React from "react";
 import "../assets/css/plants.css";
+import { useTheme } from "../providers/ThemeContext";
 
 export default function Plants() {
+  const theme = useTheme(); // "dark" | "light"
   return (
     // not-loaded
-    <div className="">
-      {/* <div className="night"></div> */}
+    <div className="fixed inset-0 overflow-hidden">
+      <div className={`${theme === "dark" ? "night" : "day"}`}></div>
       <div className="flowers">
         <div className="flower flower--1">
           <div className="flower__leafs flower__leafs--1">
@@ -59,7 +60,7 @@ export default function Plants() {
           </div>
         </div>
 
-        <div className="flower flower--3">
+        {/* <div className="flower flower--3">
           <div className="flower__leafs flower__leafs--3">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -82,9 +83,9 @@ export default function Plants() {
             <div className="flower__line__leaf flower__line__leaf--3"></div>
             <div className="flower__line__leaf flower__line__leaf--4"></div>
           </div>
-        </div>
+        </div> */}
 
-        {/* <div className="grow-ans">
+        <div className="grow-ans">
           <div className="flower__g-long">
             <div className="flower__g-long__top"></div>
             <div className="flower__g-long__bottom"></div>
@@ -297,7 +298,7 @@ export default function Plants() {
           <div className="grow-ans">
             <div className="leaf leaf--3"></div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

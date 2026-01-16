@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Swal from "sweetalert2";
-import "../../assets/css/greetings.css";
+import "../assets/css/greetings.css";
 import gsap from "gsap";
 import { Expo, Elastic } from "gsap/all";
 
@@ -32,7 +32,7 @@ function Greetings() {
   return (
     <>
       <audio className="song" loop autoPlay>
-        <source src={require("../../assets/music/hbd.mpeg")} />
+        <source src={require("../assets/music/hbd.mpeg")} />
         Your browser isn't invited for super fun audio time.
       </audio>
 
@@ -89,13 +89,13 @@ function Greetings() {
 
         <div className="six">
           <img
-            src={require("../../assets/img/rika.jpg")}
+            src={require("../assets/img/rika.jpg")}
             alt="profile"
             className="profile-picture"
             id="imagePath"
           />
           <img
-            src={require("../../assets/img/hat.png")}
+            src={require("../assets/img/hat.png")}
             alt="hat"
             className="hat"
           />
@@ -107,39 +107,39 @@ function Greetings() {
 
         <div className="seven">
           <div className="baloons">
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon2.png")} alt="" />
-            <img src={require("../../assets/img/ballon1.png")} alt="" />
-            <img src={require("../../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon2.png")} alt="" />
+            <img src={require("../assets/img/ballon1.png")} alt="" />
+            <img src={require("../assets/img/ballon3.png")} alt="" />
           </div>
         </div>
 
