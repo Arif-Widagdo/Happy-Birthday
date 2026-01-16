@@ -10,7 +10,7 @@ export const CountdownDisplay = ({ days, hours, minutes, seconds }) => {
             title={"Days"}
             dateTime={{ days, hours, minutes, seconds }}
           />
-          <div className="mb-1 text-black dark:text-white text-8xl lg:text-9xl">
+          <div className="mb-1 text-black dark:text-white text-8xl lg:text-9xl z-10">
             :
           </div>
           <DateTimeDisplay
@@ -19,7 +19,7 @@ export const CountdownDisplay = ({ days, hours, minutes, seconds }) => {
             dateTime={{ days, hours, minutes, seconds }}
           />
         </div>
-        <div className="hidden mb-1 text-black dark:text-white text-8xl lg:text-9xl md:block">
+        <div className="hidden mb-1 text-black dark:text-white text-8xl lg:text-9xl md:block z-10">
           :
         </div>
         <div className="countdown-grid">
@@ -28,7 +28,7 @@ export const CountdownDisplay = ({ days, hours, minutes, seconds }) => {
             title={"Minutes"}
             dateTime={{ days, hours, minutes, seconds }}
           />
-          <div className="mb-1 text-black dark:text-white text-8xl lg:text-9xl">
+          <div className="mb-1 text-black dark:text-white text-8xl lg:text-9xl z-10">
             :
           </div>
           <DateTimeDisplay

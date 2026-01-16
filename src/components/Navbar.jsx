@@ -37,7 +37,7 @@ export default function Navbar() {
             <span
               className={`${
                 theme === "dark" ? "translate-x-7" : "translate-x-1"
-              } inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-700 transition shadow`}
+              } inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow transition-all duration-300 ease-in-out `}
             >
               {theme === "dark" ? (
                 <MoonIcon className="h-4 w-4 text-white" />

@@ -6,7 +6,7 @@ import Greetings from "./components/Greetings";
 import Plants from "./components/Plants";
 
 export default function App() {
-  const toDate = "January 26, 2026 00:00:00";
+  const toDate = "January 28, 2026 20:26:00";
 
   const [complete, days, hours, minutes, seconds] = useCountdown(toDate);
 
