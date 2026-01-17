@@ -1,68 +1,77 @@
-import React, { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import "../assets/css/greetings.css";
 import gsap from "gsap";
 import { Expo, Elastic } from "gsap/all";
 
-function Greetings() {
+function Greetings({ name = "Someone Special", age = 0, images = "" }) {
+  const audioRef = useRef(null);
+  const timelineRef = useRef(null);
+
   useEffect(() => {
-    // trigger to play music in the background with sweetalert
-    window.addEventListener("load", () => {
-      Swal.fire({
-        title: "Do you want to play music in the background?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes",
-        cancelButtonText: "No",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          document.querySelector(".song").play();
-          animationTimeline();
-        } else {
-          animationTimeline();
-        }
-      });
+    Swal.fire({
+      title: "Do you want to play music in the background?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Gas, biar vibes-nya dapet 😉",
+      cancelButtonText: "Skip, pengin hening",
+      iconColor: "#fbbf24",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        audioRef.current?.play();
+      }
+
+      timelineRef.current = animationTimeline();
     });
 
-    // animation timeline
+    return () => {
+      timelineRef.current?.kill();
+    };
   }, []);
+
+  const handleReplay = () => {
+    if (!timelineRef.current) return;
+
+    timelineRef.current.restart();
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
+  };
 
   return (
     <>
-      <audio className="song" loop autoPlay>
+      <audio ref={audioRef} loop>
         <source src={require("../assets/music/hbd.mpeg")} />
-        Your browser isn't invited for super fun audio time.
       </audio>
 
-      <div className="container-greeting">
+      <div className="container-greeting text-gray-900 dark:text-gray-100">
         <div className="one">
           <h1 className="one">
             Hi
-            <span id="name"> Rika</span>
+            <span className="text-pink-600 dark:text-pink-400"> {name}</span>
           </h1>
-          <p className="two" id="greetingText">
+          <p className="two text-gray-700 dark:text-gray-300" id="greetingText">
             I really like your name btw!
           </p>
         </div>
 
         <div className="three">
-          <p>It's your birthday!! :D</p>
+          <p>It's your birthday!! 🎉</p>
         </div>
 
         <div className="four">
           <div className="text-box">
             <p className="hbd-chatbox">
-              Selamat ulang tahun yang ke-22 kepada wanita cantik ini! Hari ini
-              adalah momen yang istimewa untuk merayakan pencapaianmu dan
-              kecantikanmu yang tak terbantahkan. Semoga hari ini penuh dengan
-              kebahagiaan dan keceriaan yang melimpah. Semoga usiamu yang baru
-              ini membawa berbagai kesuksesan, kebahagiaan, dan kesenangan yang
-              tak terhingga. Teruslah bersinar seperti bintang yang bercahaya,
-              dan teruslah menaklukkan dunia dengan kecantikanmu yang luar
-              biasa. Selamat ulang tahun yang tak terlupakan, semoga segala
-              impianmu menjadi nyata!
+              Selamat ulang tahun yang ke-{age} untuk {name}! Hari ini adalah
+              momen yang istimewa untuk merayakan pencapaianmu dan kecantikanmu
+              yang tak terbantahkan. Semoga hari ini penuh dengan kebahagiaan
+              dan keceriaan yang melimpah. Semoga usiamu yang baru ini membawa
+              berbagai kesuksesan, kebahagiaan, dan kesenangan yang tak
+              terhingga. Teruslah bersinar seperti bintang yang bercahaya, dan
+              teruslah menaklukkan dunia dengan kecantikanmu yang luar biasa.
+              Selamat ulang tahun yang tak terlupakan, semoga segala impianmu
+              menjadi nyata ✨
             </p>
             <p className="fake-btn">Send</p>
           </div>
@@ -88,94 +97,66 @@ function Greetings() {
         </div>
 
         <div className="six">
-          <img
-            src={require("../assets/img/rika.jpg")}
-            alt="profile"
-            className="profile-picture"
-            id="imagePath"
-          />
-          <img
-            src={require("../assets/img/hat.png")}
-            alt="hat"
-            className="hat"
-          />
+          <div className="photo-wrapper">
+            <img
+              src={images}
+              alt="profile"
+              className="profile-picture rounded-lg shadow-lg dark:shadow-black/40"
+            />
+
+            <img
+              src={require("../assets/img/hat.png")}
+              alt="hat"
+              className="hat"
+            />
+          </div>
+
           <div className="wish">
             <h3 className="wish-hbd">Happy Birthday!</h3>
-            <h5 id="wishText">i'm always to be with you! :D</h5>
+            <h5 id="wishText" className="text-gray-700 dark:text-gray-300">
+              i'm always to be with you! :D
+            </h5>
           </div>
         </div>
 
         <div className="seven">
           <div className="baloons">
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon2.png")} alt="" />
-            <img src={require("../assets/img/ballon1.png")} alt="" />
-            <img src={require("../assets/img/ballon3.png")} alt="" />
+            {Array.from({ length: 34 }).map((_, i) => (
+              <img
+                key={i}
+                src={require(`../assets/img/ballon${(i % 3) + 1}.png`)}
+                alt=""
+                className="dark:brightness-90"
+              />
+            ))}
           </div>
         </div>
 
         <div className="eight">
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" />
-          </svg>
+          {Array.from({ length: 9 }).map((_, i) => (
+            <svg
+              key={i}
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              className="opacity-100 dark:opacity-80"
+            >
+              <circle cx="20" cy="20" r="20" />
+            </svg>
+          ))}
         </div>
 
         <div className="nine">
-          <p>Okay, now come back and tell me if you liked it.</p>
-          <p id="replay">Or click, if you want to watch it again.</p>
+          <p className="text-gray-700 dark:text-gray-300">
+            Okay, now come back and tell me if you liked it.
+          </p>
+
+          <p
+            onClick={handleReplay}
+            className="text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            Or click, if you want to watch it again.
+          </p>
+
           <p className="last-smile">:D</p>
         </div>
       </div>
@@ -185,10 +166,10 @@ function Greetings() {
 
 function animationTimeline() {
   // split chars that needs to be animated individually
-  const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
+  const textBox = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-  textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
+  textBox.innerHTML = `<span>${textBox.innerHTML
     .split("")
     .join("</span><span>")}</span>`;
 
@@ -213,62 +194,15 @@ function animationTimeline() {
   // timeline
   const tl = gsap.timeline();
 
-  tl.to(".container-greeting", {
-    visibility: "visible",
-    duration: 0.6,
-  })
-    .from(".one", {
-      opacity: 0,
-      y: 10,
-      duration: 0.7,
-    })
-    .from(".two", {
-      opacity: 0,
-      y: 10,
-      duration: 0.4,
-    })
-    .to(
-      ".one",
-      {
-        opacity: 0,
-        y: 10,
-        duration: 0.7,
-      },
-      "+=3.5"
-    )
-    .to(
-      ".two",
-      {
-        opacity: 0,
-        y: 10,
-        duration: 0.7,
-      },
-      "-=1"
-    )
-    .from(".three", {
-      opacity: 0,
-      y: 10,
-      duration: 0.7,
-    })
-    .to(
-      ".three",
-      {
-        opacity: 0,
-        y: 10,
-        duration: 0.7,
-      },
-      "+=3"
-    )
-    .from(".four", {
-      scale: 0.2,
-      opacity: 0,
-      duration: 0.7,
-    })
-    .from(".fake-btn", {
-      scale: 0.2,
-      opacity: 0,
-      duration: 0.3,
-    })
+  tl.to(".container-greeting", { visibility: "visible", duration: 0.6 })
+    .from(".one", { opacity: 0, y: 10, duration: 0.7 })
+    .from(".two", { opacity: 0, y: 10, duration: 0.4 })
+    .to(".one", { opacity: 0, y: 10, duration: 0.7 }, "+=3.5")
+    .to(".two", { opacity: 0, y: 10, duration: 0.7 }, "-=1")
+    .from(".three", { opacity: 0, y: 10, duration: 0.7 })
+    .to(".three", { opacity: 0, y: 10, duration: 0.7 }, "+=3")
+    .from(".four", { scale: 0.2, opacity: 0, duration: 0.7 })
+    .from(".fake-btn", { scale: 0.2, opacity: 0, duration: 0.3 })
     .to(".hbd-chatbox span", {
       visibility: "visible",
       duration: 1.5,
@@ -276,22 +210,10 @@ function animationTimeline() {
     })
     .to(
       ".fake-btn",
-      {
-        backgroundColor: "rgb(127, 206, 248)",
-        duration: 0.1,
-      },
-      "+=4"
+      { backgroundColor: "rgb(127, 206, 248)", duration: 0.1 },
+      "+=4",
     )
-    .to(
-      ".four",
-      {
-        scale: 0.2,
-        opacity: 0,
-        y: -150,
-        duration: 0.5,
-      },
-      "+=1"
-    )
+    .to(".four", { scale: 0.2, opacity: 0, y: -150, duration: 0.5 }, "+=1")
     .from(".idea-1", ideaTextTrans)
     .to(".idea-1", ideaTextTransLeave, "+=2.5")
     .from(".idea-2", ideaTextTrans)
@@ -318,26 +240,10 @@ function animationTimeline() {
         opacity: 0,
         duration: 0.7,
       },
-      "+=1.5"
+      "+=1.5",
     )
-    .to(
-      ".idea-5 span",
-      {
-        rotation: 90,
-        x: 8,
-        duration: 0.7,
-      },
-      "+=1.4"
-    )
-    .to(
-      ".idea-5",
-      {
-        scale: 0.2,
-        opacity: 0,
-        duration: 0.7,
-      },
-      "+=2"
-    )
+    .to(".idea-5 span", { rotation: 90, x: 8, duration: 0.7 }, "+=1.4")
+    .to(".idea-5", { scale: 0.2, opacity: 0, duration: 0.7 }, "+=2")
     .from(".idea-6 span", {
       scale: 3,
       opacity: 0,
@@ -354,28 +260,13 @@ function animationTimeline() {
     })
     .fromTo(
       ".baloons img",
-      {
-        opacity: 0.9,
-        y: 1400,
-      },
-      {
-        opacity: 1,
-        y: -1000,
-        duration: 2.5,
-        stagger: 0.2,
-      }
+      { opacity: 0.9, y: 1400 },
+      { opacity: 1, y: -1000, duration: 2.5, stagger: 0.2 },
     )
     .from(
-      ".profile-picture",
-      {
-        scale: 3.5,
-        opacity: 0,
-        x: 25,
-        y: -25,
-        rotationZ: -45,
-        duration: 0.5,
-      },
-      "-=2"
+      ".photo-wrapper",
+      { scale: 3.5, opacity: 0, x: 25, y: -25, rotationZ: -45, duration: 0.5 },
+      "-=2",
     )
     .from(".hat", {
       x: -100,
@@ -394,10 +285,7 @@ function animationTimeline() {
     })
     .fromTo(
       ".wish-hbd span",
-      {
-        scale: 1.4,
-        rotationY: 150,
-      },
+      { scale: 1.4, rotationY: 150 },
       {
         scale: 1,
         rotationY: 0,
@@ -405,17 +293,12 @@ function animationTimeline() {
         ease: Expo.easeOut,
         stagger: 0.1,
       },
-      "party"
+      "party",
     )
     .from(
       ".wish h5",
-      {
-        opacity: 0,
-        y: 10,
-        skewX: "-15deg",
-        duration: 0.5,
-      },
-      "party"
+      { opacity: 0, y: 10, skewX: "-15deg", duration: 0.5 },
+      "party",
     )
     .to(".eight svg", {
       visibility: "visible",
@@ -426,26 +309,11 @@ function animationTimeline() {
       duration: 1.5,
       stagger: 0.3,
     })
-    .to(".six", {
-      opacity: 0,
-      y: 30,
-      zIndex: "-1",
-      duration: 0.5,
-    })
+    .to(".six", { opacity: 0, y: 30, zIndex: "-1", duration: 0.5 })
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
-    .to(
-      ".last-smile",
-      {
-        rotation: 90,
-        duration: 0.5,
-      },
-      "+=1"
-    );
+    .to(".last-smile", { rotation: 90, duration: 0.5 }, "+=1");
 
-  const replyBtn = document.getElementById("replay");
-  replyBtn.addEventListener("click", () => {
-    tl.restart();
-  });
+  return tl;
 }
 
 export default Greetings;
