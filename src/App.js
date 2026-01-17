@@ -6,7 +6,7 @@ import Greetings from "./components/Greetings";
 import Plants from "./components/Plants";
 
 export default function App() {
-  const toDate = "January 17, 2026 18:11:00";
+  const toDate = "January 26, 2026 00:00:00";
 
   const [complete, days, hours, minutes, seconds] = useCountdown(toDate);
 
@@ -33,7 +33,7 @@ export default function App() {
         {complete ? (
           <Greetings
             name="Anisa Khoiriyah, Amd. Kep"
-            age={getAge("1998-01-17")}
+            age={getAge("1998-01-26")}
             images={require("./assets/img/anisa/2.jpeg")}
           />
         ) : (
