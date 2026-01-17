@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Happy-Birthday/static/css/main.7c3b3f37.css",
+    "main.js": "/Happy-Birthday/static/js/main.a8d71c7b.js",
+    "static/media/hbd.mpeg": "/Happy-Birthday/static/media/hbd.25166eead627040c08a0.mpeg",
+    "static/media/arifWidagdo.jpg": "/Happy-Birthday/static/media/arifWidagdo.0c825d1847f1fd432653.jpg",
+    "static/media/2.jpeg": "/Happy-Birthday/static/media/2.f969ca8f4810e698a673.jpeg",
+    "static/media/hat.png": "/Happy-Birthday/static/media/hat.0d293fb46c68380e7ea2.png",
+    "static/media/ballon2.png": "/Happy-Birthday/static/media/ballon2.e34597b73507d8aa7554.png",
+    "static/media/ballon1.png": "/Happy-Birthday/static/media/ballon1.ff52d239db0ec31f0a8c.png",
+    "static/media/ballon3.png": "/Happy-Birthday/static/media/ballon3.bf21e1c5425931403f96.png",
+    "index.html": "/Happy-Birthday/index.html",
+    "main.7c3b3f37.css.map": "/Happy-Birthday/static/css/main.7c3b3f37.css.map",
+    "main.a8d71c7b.js.map": "/Happy-Birthday/static/js/main.a8d71c7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c3b3f37.css",
+    "static/js/main.a8d71c7b.js"
+  ]
+}
